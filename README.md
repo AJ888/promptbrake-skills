@@ -6,6 +6,16 @@ and custom response test packs. It contains no PromptBrake server implementation
 
 ## Use
 
+With Node.js installed, run this in the project where you want the skill:
+
+```sh
+npx skills add AJ888/promptbrake-skills --skill promptbrake-free-tools
+```
+
+Choose your supported assistant in the installer. This installs the instructions
+and examples; connect the MCP server separately as described below. Alternatively,
+install the complete folder manually.
+
 1. Connect your assistant's remote MCP client to `https://promptbrake.com/free-tools/mcp`
    with authentication set to none. See https://promptbrake.com/free-tools for setup.
 2. Install the complete `promptbrake-free-tools` folder in your client's supported
