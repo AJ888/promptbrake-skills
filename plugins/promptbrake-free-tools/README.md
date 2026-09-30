@@ -45,7 +45,10 @@ data policies. See https://promptbrake.com/privacy.
 Run `python3 scripts/build_free_tools_plugin.py /tmp/promptbrake-free-tools.zip`
 from the source repository root. The builder copies the existing skill and examples
 into `skills/` in the archive; edit those original files instead of duplicating them.
-Only six explicitly selected public files enter the ZIP.
+Only seven explicitly selected public files enter the ZIP.
+
+The plugin files and bundled skill instructions are licensed under MIT. This
+license does not cover the hosted service or PromptBrake's private server code.
 
 ## Publication status
 
