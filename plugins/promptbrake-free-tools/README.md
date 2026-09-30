@@ -14,8 +14,15 @@ codex plugin add promptbrake-free-tools@promptbrake
 ```
 
 Start a new chat after installation so the skill and tools are picked up.
-The package uses the Codex plugin format; it is not a browser extension and is
-not installable in every MCP client.
+For Claude Code:
+
+```sh
+claude plugin marketplace add AJ888/promptbrake-skills
+claude plugin install promptbrake-free-tools@promptbrake
+```
+
+Restart Claude Code after installation. The package includes Codex and Claude Code
+plugin manifests; other MCP clients may need a separate connection.
 
 The installer should expose the `promptbrake-free-tools` MCP server at
 `https://promptbrake.com/free-tools/mcp` with no authentication, plus the
@@ -38,13 +45,13 @@ data policies. See https://promptbrake.com/privacy.
 Run `python3 scripts/build_free_tools_plugin.py /tmp/promptbrake-free-tools.zip`
 from the source repository root. The builder copies the existing skill and examples
 into `skills/` in the archive; edit those original files instead of duplicating them.
-Only five explicitly selected public files enter the ZIP.
+Only six explicitly selected public files enter the ZIP.
 
 ## Publication status
 
 Codex CLI installation and enabled status were verified, and all four live MCP
-example calls passed using the installed connection configuration. Natural-language
-tool selection in a new chat has not yet been tested. This is a self-published
+example calls passed using the installed connection configuration. The refund release-planning workflow also invoked the MCP tool from a natural-language
+request in Codex. This is a self-published
 GitHub marketplace, not an official marketplace approval. The existing
 OpenAI submission is separate and remains in review. Do not upload this package
 as a replacement for that submission: its package identifier differs. A future
