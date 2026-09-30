@@ -4,6 +4,22 @@
 PromptBrake MCP tools: injection payloads, OWASP risk mapping, ADLC release planning,
 and custom response test packs. It contains no PromptBrake server implementation.
 
+## Install the complete Codex plugin
+
+The plugin bundles the MCP connection and the skill:
+
+```sh
+codex plugin marketplace add AJ888/promptbrake-skills
+codex plugin add promptbrake-free-tools@promptbrake
+```
+
+Start a new chat after installation. This is a self-published GitHub marketplace;
+it is not an OpenAI directory approval. Codex CLI installation and all four live
+MCP example calls have been verified. Natural-language tool selection in a fresh
+chat has not yet been tested. See [plugin setup](plugins/promptbrake-free-tools/README.md).
+
+For other skill-compatible MCP clients, use the standalone instructions below.
+
 ## Use
 
 With Node.js installed, run this in the project where you want the skill:
