@@ -38,7 +38,7 @@ CI access. Text checks do not establish that backend actions were authorized;
 release plans do not certify security. Use test inputs only on authorized systems.
 Tool arguments are sent to the hosted service. Inputs and results are not stored
 by PromptBrake; operational request metadata is logged. Your assistant has its own
-data policies. See https://promptbrake.com/privacy.
+data policies. See [Privacy policy](https://promptbrake.com/privacy).
 
 ## Build from the source repository
 
