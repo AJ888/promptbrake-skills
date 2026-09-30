@@ -21,7 +21,7 @@ claude plugin marketplace add AJ888/promptbrake-skills
 claude plugin install promptbrake-free-tools@promptbrake
 ```
 
-Restart Claude Code after installation. The package includes Codex and Claude Code
+Restart Claude Code after installation. The package includes Codex, Claude Code, and Cursor
 plugin manifests; other MCP clients may need a separate connection.
 
 The installer should expose the `promptbrake-free-tools` MCP server at
@@ -45,7 +45,7 @@ data policies. See [Privacy policy](https://promptbrake.com/privacy).
 Run `python3 scripts/build_free_tools_plugin.py /tmp/promptbrake-free-tools.zip`
 from the source repository root. The builder copies the existing skill and examples
 into `skills/` in the archive; edit those original files instead of duplicating them.
-Only seven explicitly selected public files enter the ZIP.
+Only nine explicitly selected public files enter the ZIP.
 
 The plugin files and bundled skill instructions are licensed under MIT. This
 license does not cover the hosted service or PromptBrake's private server code.
@@ -63,3 +63,12 @@ review materials and branding, and pass the portal checks.
 
 Setup and support: https://promptbrake.com/free-tools and
 https://promptbrake.com/contact.
+
+## Cursor
+
+The repository includes `.cursor-plugin/marketplace.json` and a Cursor manifest
+that reuses the bundled skill and `.mcp.json`. No API key is required.
+Cursor Marketplace publication is pending submission and review.
+For local testing, place the complete built plugin under
+`~/.cursor/plugins/local/promptbrake-free-tools/`, then restart Cursor and check
+that the skill and MCP server appear. Avoid adding a duplicate MCP connection.
