@@ -29,9 +29,34 @@ The installer should expose the `promptbrake-free-tools` MCP server at
 `promptbrake-free-tools` skill. Approve the connection when your client prompts.
 Avoid configuring a second copy of the same MCP connection.
 
-Try: “Build a response test pack for my refund chatbot. It should ask for human
-approval before issuing a refund.” The assistant should clarify the exact response
-text you want checked before creating the pack.
+## Try this first
+
+After connecting PromptBrake, copy one prompt into your assistant. It may ask a
+few questions before calling the matching tool.
+
+### Prompt-injection test inputs
+
+```text
+Help me prepare prompt-injection tests for my customer-support chatbot.
+```
+
+Get fixed adversarial inputs to try on a chatbot you own or are authorized to test. No CI access is needed to generate them; the tool does not run them against your chatbot.
+
+### Refund chatbot response checks
+
+```text
+Help me build response checks for a refund bot that should ask for human approval.
+```
+
+Get a tests.json pack after choosing the exact response text to check. Creating it is free; running it requires a configured PromptBrake runner and CI access. Text checks do not verify whether a refund was actually authorized.
+
+### AI agent release plan
+
+```text
+Help me plan my AI agent’s release. Ask me what you need to know.
+```
+
+Get planning gaps and a starter gate policy based on your answers. No CI access is needed to create the plan. It does not execute tests or certify release readiness.
 
 Tools prepare artifacts. Running tests needs a configured PromptBrake runner and
 CI access. Text checks do not establish that backend actions were authorized;
