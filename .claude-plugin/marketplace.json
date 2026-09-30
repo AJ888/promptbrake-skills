@@ -1,0 +1,13 @@
+{
+  "name": "promptbrake",
+  "owner": {
+    "name": "PromptBrake"
+  },
+  "plugins": [
+    {
+      "name": "promptbrake-free-tools",
+      "source": "./plugins/promptbrake-free-tools",
+      "description": "Prepare prompt-injection inputs, OWASP LLM risk mappings, AI release plans, and response test packs using four free hosted MCP tools."
+    }
+  ]
+}
