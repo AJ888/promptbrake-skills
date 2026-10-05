@@ -1,8 +1,8 @@
 # PromptBrake AI assistant skill
 
-`promptbrake-free-tools/` is a portable instruction package for all four hosted
+`promptbrake-free-tools/` is a portable instruction package for all five hosted
 PromptBrake MCP tools: injection payloads, OWASP risk mapping, ADLC release planning,
-and custom response test packs. It contains no PromptBrake server implementation.
+custom response test packs, and agent tool-call packs. It contains no PromptBrake server implementation.
 
 ## Install the complete Codex plugin
 
@@ -57,9 +57,12 @@ Examples:
 - “Map prompt-injection risk to test ideas and review responsibilities.”
 - “Help me plan the release of my tool-calling agent; keep unknown decisions explicit.”
 - “Build a test pack from my chatbot's expected and forbidden response text.”
+- “Check my agent does not call send_email without approval.”
 
-The free tools prepare inputs and artifacts. Running tests requires a configured
-PromptBrake runner and CI access. Text comparisons cannot verify backend actions;
+[Agent tool-call builder and capture setup](https://promptbrake.com/free-tools/agent-tool-call-checks).
+
+The free tools prepare inputs and artifacts. Response packs require a configured PromptBrake runner and CI access.
+Tool-call packs run in the free Action v0.2.0 after staging dispatcher capture is configured. Text comparisons cannot verify backend actions;
 release plans are not security certification.
 
 ## Public package

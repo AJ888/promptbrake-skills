@@ -1,8 +1,8 @@
 # PromptBrake Free Tools plugin
 
-Bundles the PromptBrake remote MCP connection with one skill covering all four
+Bundles the PromptBrake remote MCP connection with one skill covering the
 free tools: injection inputs, OWASP LLM risk mappings, AI release planning, and
-custom response test packs.
+custom response test packs and agent tool-call test packs.
 
 ## Use
 
@@ -93,7 +93,20 @@ https://promptbrake.com/contact.
 
 The repository includes `.cursor-plugin/marketplace.json` and a Cursor manifest
 that reuses the bundled skill and `.mcp.json`. No API key is required.
-Cursor Marketplace publication is pending submission and review.
+Cursor Marketplace application submitted on 2026-09-29; awaiting review as of
+2026-09-30. Submission is not marketplace publication.
 For local testing, place the complete built plugin under
 `~/.cursor/plugins/local/promptbrake-free-tools/`, then restart Cursor and check
 that the skill and MCP server appear. Avoid adding a duplicate MCP connection.
+
+## Agent tool-call checks
+
+Ask: “Build a test pack that checks my agent does not call send_email for an unapproved request.”
+
+The fifth tool, `build_agent_tool_tests`, prepares the pack. Run it with
+[PromptBrake Action v0.2.0](https://github.com/AJ888/promptbrake-action/releases/tag/v0.2.0)
+and one-time staging dispatcher capture. Missing or incomplete capture cannot pass.
+It checks dispatched tool names and configured arguments, not successful backend effects.
+A licensed local runner adds retained history, comparisons, gates and exports.
+
+[Build a pack and configure capture](https://promptbrake.com/free-tools/agent-tool-call-checks).

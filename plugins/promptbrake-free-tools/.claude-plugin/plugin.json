@@ -1,7 +1,7 @@
 {
   "name": "promptbrake-free-tools",
-  "version": "1.0.1",
-  "description": "Prepare prompt-injection inputs, OWASP LLM risk mappings, AI release plans, and response test packs using four free hosted MCP tools.",
+  "version": "1.1.0",
+  "description": "Prepare AI security inputs, risk mappings, release plans, response packs and captured agent tool-call packs using free hosted MCP tools.",
   "author": {
     "name": "PromptBrake",
     "url": "https://promptbrake.com",

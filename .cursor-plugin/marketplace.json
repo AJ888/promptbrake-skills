@@ -8,7 +8,7 @@
     {
       "name": "promptbrake-free-tools",
       "source": "plugins/promptbrake-free-tools",
-      "description": "Prepare prompt-injection inputs, OWASP LLM risk mappings, AI release plans, and response test packs using four free hosted MCP tools."
+      "description": "Prepare AI security inputs, risk mappings, release plans, response packs and captured tool-call packs using free hosted MCP tools."
     }
   ]
 }

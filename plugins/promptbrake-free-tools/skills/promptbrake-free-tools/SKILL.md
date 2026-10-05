@@ -1,13 +1,12 @@
 ---
 name: promptbrake-free-tools
-description: Prepare AI security test inputs, map OWASP LLM risks, plan AI releases, and build response test packs using PromptBrake's four free MCP tools. Use for testing or release planning for chatbots, RAG systems, agents, and LLM APIs.
+description: Prepare AI security test inputs, map OWASP LLM risks, plan AI releases, and build response or agent tool-call test packs using PromptBrake's free MCP tools. Use for testing or release planning for chatbots, RAG systems, agents, and LLM APIs.
 ---
 
 # PromptBrake free tools
 
 Use the connected PromptBrake MCP server at `https://promptbrake.com/free-tools/mcp`.
-Its four tools are available anonymously. Running generated tests is a separate operation
-requiring a configured PromptBrake runner and CI access.
+Its five tools are available anonymously. Inspect the live schema first. Running generated tests is separate: response packs require a runner and CI access; tool-call packs can use the free Action with application capture.
 
 ## Choose the right tool
 
@@ -16,9 +15,10 @@ requiring a configured PromptBrake runner and CI access.
 | Adversarial inputs for a known attack surface | `get_prompt_injection_payloads` | Bundled payload text for one attack category |
 | Test ideas for an OWASP LLM risk | `map_owasp_llm_risk` | Risk explanation, prompts, signals, suggested owner, and coverage |
 | A release plan and unresolved decisions | `plan_adlc_release` | Markdown plan, planning-completeness score, and starter gate YAML |
+| Observed agent tool invocations and typed arguments | `build_agent_tool_tests` | Structured result with `pack_json`, capture setup and limitations |
 | Repeatable checks against response text | `build_test_pack` | Validated JSON text to save as `tests.json` |
 
-Call only the tools relevant to the request; do not force all four into every task.
+Call only the tools relevant to the request; do not force all tools into every task.
 Use the tool names as exposed by the client, which may add a server prefix. Read the
 current tool schemas before calling, especially the planner's exact enum values.
 If the server is unavailable, explain how to connect it and stop tool-dependent work;
@@ -91,6 +91,27 @@ never place credentials in the pack. Running the pack consumes scan requests/quo
 requires the user's execution scope. Do not claim tests passed without run results.
 CI run storage differs from free pack creation: custom prompts/results are retained
 with the run under its access and retention controls.
+
+### Agent tool-call packs
+
+Use `build_agent_tool_tests` only when exposed in the live schema. Build 1–20 tests
+with stable ASCII `id`, `name`, `prompt` and `rule`. Rules are `must_not_call` with
+`tool`, or `must_call_with` with `tool` and 1–10 object argument paths to typed JSON
+values. Use synthetic values; booleans differ from numbers and strings are case sensitive.
+Save only parsed `structuredContent.pack_json` as `tool-tests.json`.
+
+Explain the one-time application dispatcher capture setup before suggesting a run.
+Capture actual invocations, not proposed model calls or final replies. Read setup
+and limitations from the result. Require correlated, complete coverage; absent
+calls alone do not prove a pass. Await all dispatch tasks; unstarted detached work
+is outside helper visibility. A matching invocation does not prove backend effects
+or enforce tool permissions. Missing evidence is inconclusive.
+
+Run with a reviewed compatible free Action using `groups: tools`, `tool-tests`, and
+`trace-path`; no account or license. The licensed local runner accepts
+`PB_TOOL_TESTS_FILE` for sanitized history, comparisons, gates and JSON/PDF exports.
+Never claim a feature is installed or a test passed without checking its version
+and actual run results. Do not send a target request just to build the pack.
 
 ## Combine tools when useful
 
