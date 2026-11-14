@@ -4,6 +4,16 @@
 PromptBrake MCP tools: injection payloads, OWASP risk mapping, ADLC release planning,
 custom response test packs, and agent tool-call packs. It contains no PromptBrake server implementation.
 
+## Preparation, free execution and runner plans
+
+PromptBrake provides security testing for AI applications.
+
+- **Free web and MCP tools** prepare prompt-injection inputs, OWASP risk mappings, release plans and test packs. They do not scan your application.
+- **Free GitHub Action** runs five prompt-injection and five synthetic-secret leakage response checks, or custom tool-call packs with dispatcher capture. No PromptBrake license is required; model and GitHub runner costs may apply. Custom response packs require the licensed runner.
+- **Licensed Docker runner** provides broader checks, custom response packs, evidence, retesting and configurable CI release criteria. Start with 3 scans for 7 days at no charge. Paid options are $99 once for 5 scans valid 30 days from payment, or $499/month for 30 scans and one active runner license. Retests use scan credits; model and infrastructure costs are separate.
+
+Captured tool calls do not verify backend effects or enforce permissions. Test only applications you own or are authorized to test. See [current pricing and availability](https://promptbrake.com/plans).
+
 ## Install the complete Codex plugin
 
 The plugin bundles the MCP connection and the skill:
